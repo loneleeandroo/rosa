@@ -3,18 +3,7 @@ Students = new Meteor.Collection('students');
 Meteor.startup(function() {
   if (Meteor.isClient) {
     // sort alphabetically?
-    StudentFilter = new Meteor.FilterCollections(Students, {
-      name: 'filteredStudents',
-      template: 'index',
-      filters: {
-        "name": {
-          title: 'Name',
-          operator: ['$regex', 'i'],
-          condition: '$and',
-          searchable: 'required'
-        }
-      }
-    });    
+     
   };
 
   /*

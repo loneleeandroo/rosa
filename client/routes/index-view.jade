@@ -1,7 +1,7 @@
 template(name="index")
   .row.row-full-height
-    aside.col-xs-2.well.full-height-background
-    aside.col-xs-2
+    aside.col-lg-2.well.full-height-background.visible-lg-table-cell
+    aside.col-lg-2.visible-lg-table-cell
       form#search-form
         .form-group
           input.form-control(role="search", type="text", placeholder="Type in here to search ...")
@@ -18,7 +18,7 @@ template(name="index")
                   .badge {{sid}}
                   h4 {{name}}
               
-    article.col-xs-8.thumnbail-container
+    article.col-md-12.thumnbail-container.col-lg-8
       .row
         .pull-left
           button.btn.btn-success.btn-md(style="position:relative") 
@@ -58,9 +58,9 @@ template(name="index")
               a.lesson-thumbnail.thumbnail(href="#")
                 .thumbnail-inner.lesson-thumbnail-inner
                   h3.text-center.thumbnail-caption {{name}}
-
-    aside.col-xs-2.well.full-height-background
-    aside.col-xs-2
+           
+    aside.col-lg-2.well.full-height-background.visible-lg-table-cell
+    aside.col-lg-2.visible-lg-table-cell
       p.lead.notes-header Notes
 
       if notes.length

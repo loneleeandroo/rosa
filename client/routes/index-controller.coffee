@@ -13,6 +13,28 @@ Router.map ->
       return
   return
 
+# Rendered
+Meteor.startup () ->
+  StudentFilter = new Meteor.FilterCollections(Students,
+    name: "filteredStudents"
+    template: "index"
+    filters:
+      name:
+        title: "Name"
+        operator: [
+          "$regex"
+          "i"
+        ]
+        condition: "$and"
+        searchable: "required"
+    callbacks:
+      templateRendered: (template) ->
+        snapper = new Snap(
+          element: document.getElementById('content')
+        )
+        return
+  )
+
 # Collections
 Template[templateName].files = ->
   Meteor.subscribe 'files'
@@ -47,9 +69,12 @@ Template[templateName].events
       newNote = 
         authorId: Meteor.userId()
         studentId: Session.get("selectedStudent")._id
+        createdAt: e.timeStamp
 
       _.each formData, (field) ->
         newNote[field.name] = field.value
+
+      console.log newNote
 
       Notes.insert newNote, (error, result) ->
         $("form#comment-form").trigger("reset");

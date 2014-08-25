@@ -4,3 +4,6 @@
       defaultProfile:
         someDefault: "default"
     return
+
+    Accounts.validateNewUser () ->
+      return false

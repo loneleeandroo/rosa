@@ -1,8 +1,16 @@
 html
   position relative
 
-body
+#content
   padding-bottom 60px
+  background-color white
+
+#drawers
+  background-color #323949
+  color white
+
+#main
+  padding-top 50px
 
 #main .row aside
   border-radius 0
@@ -15,7 +23,8 @@ body
 
 html,
 body,
-#main
+#content,
+#main,
   min-height 100%
 
 .row aside
@@ -36,3 +45,11 @@ body,
   height 100%
   top 0
   margin-bottom -60px
+
+@media (min-width: 1200px)
+  .visible-lg-table-cell
+    display table-cell !important
+
+@media (max-width: 1199px)
+  .visible-lg-table-cell
+    display none !important
