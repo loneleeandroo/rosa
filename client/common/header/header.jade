@@ -1,0 +1,37 @@
+template(name="header")
+  nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        span.navbar-brand-container.text-center
+          if student
+            .navbar-brand
+              span.badge {{student.sid}} 
+              span {{student.name}}
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-left.visible-xs
+          li 
+            a(href="#") Hello
+
+        ul.nav.navbar-nav.navbar-right
+          if currentUser
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                i.fa.fa-user
+                span User
+                span.caret
+              ul.dropdown-menu(role='menu')
+                li
+                  a(href='/') Dashboard
+                li
+                  a(href='/profile') Profile
+                li.divider
+                li
+                  a(href='/sign-out') Sign Out
+          else 
+            li
+              a(href='/sign-in') Sign In

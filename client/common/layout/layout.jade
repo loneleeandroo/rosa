@@ -1,0 +1,12 @@
+head
+  title Brand
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+template(name="layout")
+  header
+    +yield region="header"
+  section#main.container-fluid
+    +yield
+  footer
+    +yield region="footer"
+

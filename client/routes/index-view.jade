@@ -1,0 +1,85 @@
+template(name="index")
+  .row.row-full-height
+    aside.col-xs-2.well.full-height-background
+    aside.col-xs-2
+      form#search-form
+        .form-group
+          input.form-control(role="search", type="text", placeholder="Type in here to search ...")
+
+      hr
+
+      ul#student-list.media-list.nav.nav-pills.nav-stacked
+        each fcResults
+          li.media(class="{{isUserSelected _id}}")
+            a.media-body(href="/user/{{_id}}")
+              img.pull-left.media-object.media-thumbnail
+              .media-heading-container
+                .media-heading 
+                  .badge {{sid}}
+                  h4 {{name}}
+              
+    article.col-xs-8.thumnbail-container
+      .row
+        .pull-left
+          button.btn.btn-success.btn-md(style="position:relative") 
+            input.file-input(type="file")
+            i.fa.fa-plus
+            | Upload
+        .pull-right
+          .btn-group
+            button.btn.btn-default.btn-md(type='button')
+              span Most Recent
+              button.btn.btn-default.btn-md.dropdown-toggle(type='button', data-toggle='dropdown')
+                span.caret
+                span.sr-only Toggle Dropdown                
+              ul.dropdown-menu.pull-right(role='menu')
+                li
+                  a(href='#') Most Recent
+                li
+                  a(href='#') Least Recent
+                li
+                  a(href='#') A-Z Name
+                li
+                  a(href='#') Z-A Name
+                li
+                  a(href='#') Newest Comment
+                li
+                  a(href='#') Oldest Comment
+          button.btn.btn-primary.btn-md(type='button') Hide Notes
+
+      .row
+        hr
+
+      .row.thumbnail-row
+        {{userId}}
+        ul.slides.thumbnail-group
+          each files
+            li.col-xs-6.col-md-3
+              a.lesson-thumbnail.thumbnail(href="#")
+                .thumbnail-inner.lesson-thumbnail-inner
+                  h3.text-center.thumbnail-caption {{name}}
+
+    aside.col-xs-2.well.full-height-background
+    aside.col-xs-2
+      p.lead.notes-header Notes
+
+      if notes.length
+        hr
+
+      ul.media-list
+        each notes
+          li.media
+            img.pull-left.media-object.media-thumbnail
+            .media-body(href="#")
+              strong {{authorId}}
+              p {{message}}
+
+      hr
+
+      form#comment-form
+        .form-group
+          textarea.form-control(role="comment", name="message", placeholder="Type in here to comment ...")
+        .form-group
+          button.btn.btn-success.pull-right(type="submit") Comment
+
+              

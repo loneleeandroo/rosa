@@ -1,0 +1,13 @@
+{
+  "packages": {
+    "iron-router": {},
+    "jade": {},
+    "bootstrap-3": {},
+    "accounts-entry": {},
+    "font-awesome": {},
+    "holder": {},
+    "jquery-ui-sortable": {},
+    "filter-collections": {},
+    "collectionFS": {}
+  }
+}
