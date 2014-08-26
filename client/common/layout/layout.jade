@@ -1,18 +1,18 @@
 head
   title Brand
-  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
 
 template(name="layout")
   #drawers.snap-drawers
-    div.snap-drawer.snap-drawer-left
-      h1 Left
-    div.snap-drawer.snap-drawer-right
+    .snap-drawer.snap-drawer-left
+      +searchForm
+    .snap-drawer.snap-drawer-right
       h1 Right
   #content.snap-content
     header
       +yield region="header"
     section#main.container-fluid
       +yield
-    footer
+    footer.visible-xs-block
       +yield region="footer"
 

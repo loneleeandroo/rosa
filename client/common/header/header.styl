@@ -4,6 +4,7 @@ header .navbar-brand-container
   left 0
   top 0
   height 100%
+  z-index 0
 
 header .navbar-brand-container .navbar-brand
   float none 
@@ -15,3 +16,41 @@ header .navbar-nav.navbar-right:last-child
 header .navbar-brand-container .navbar-brand .badge
   position relative
   top -2px
+
+.navbar-default .navbar-drawer-toggle
+  border-color #ddd
+
+.navbar-default .navbar-drawer-toggle:hover
+  background-color #ddd
+
+.navbar-inverse .navbar-toggle
+  color white
+
+.navbar-inverse .navbar-drawer-toggle
+  border-color #333
+  color white
+
+.navbar-inverse .navbar-drawer-toggle:hover
+  background-color #333
+
+.navbar-drawer-toggle
+  position relative
+  padding 6px 10px
+  margin-top 8px
+  margin-bottom 8px
+  background-color transparent
+  background-image none
+  border 1px solid transparent
+  border-radius 4px
+  z-index 1
+
+.navbar-drawer-toggle:focus
+  outline 0
+
+.navbar-toggle
+  padding 6px 10px
+  z-index 1
+
+@media (max-width: 767px) 
+  .navbar-drawer-toggle
+    margin-left 15px

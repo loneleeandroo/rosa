@@ -19,3 +19,4 @@ accounts-ui
 filter-collections
 collectionFS
 cfs-gridfs
+fastclick

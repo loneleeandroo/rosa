@@ -13,28 +13,6 @@ Router.map ->
       return
   return
 
-# Rendered
-Meteor.startup () ->
-  StudentFilter = new Meteor.FilterCollections(Students,
-    name: "filteredStudents"
-    template: "index"
-    filters:
-      name:
-        title: "Name"
-        operator: [
-          "$regex"
-          "i"
-        ]
-        condition: "$and"
-        searchable: "required"
-    callbacks:
-      templateRendered: (template) ->
-        snapper = new Snap(
-          element: document.getElementById('content')
-        )
-        return
-  )
-
 # Collections
 Template[templateName].files = ->
   Meteor.subscribe 'files'
@@ -48,18 +26,6 @@ Template[templateName].notes = ->
 
 # Events
 Template[templateName].events 
-  "keyup form#search-form input": (e) ->
-    e.preventDefault()
-
-    search = e.target.value
-
-    if search
-      StudentFilter.search.setCriteria search, true
-      StudentFilter.search.run()
-    else
-      StudentFilter.search.clear()
-    return
-
   "click form#comment-form button[type='submit']": (e) ->
     e.preventDefault()
 
@@ -90,8 +56,3 @@ Template[templateName].events
         Files.insert newFile
         return
     return
-
-# Helpers
-Template[templateName].helpers
-  isUserSelected: (userId) ->
-    "active"  if Session.get("selectedStudent") and userId is Session.get("selectedStudent")._id

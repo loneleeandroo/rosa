@@ -7,3 +7,14 @@ Template[templateName].student = ->
 
 Template[templateName].user = ->
   return Meteor.user()
+
+# Events
+Template[templateName].events 
+  "click button.navbar-drawer-toggle": (e) ->
+    e.preventDefault()
+    snapper = window.snapper
+    if snapper.state().state is "left"
+        snapper.close()
+    else
+        snapper.open 'left'
+    return

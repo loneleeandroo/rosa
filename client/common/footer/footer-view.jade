@@ -1,4 +1,16 @@
 template(name="footer")
-  div.container
-    p.text-muted.text-center 
-    //© Copyright 2014 Eva Cheng. All rights reserved.
+  nav.navbar.navbar-default
+    ul.nav.navbar-nav.navbar-footer
+      li(class="{{isProfileSectionSelected 'profile'}}")
+        a(href="/user/{{studentId}}")
+          i.fa.fa-user.fa-2x
+      li(class="{{isProfileSectionSelected 'files'}}")
+        a(href="/user/{{studentId}}/files")
+          i.fa.fa-inbox.fa-2x
+      li(class="{{isProfileSectionSelected 'academics'}}")
+        a(href="/user/{{studentId}}/academics")
+          i.fa.fa-graduation-cap.fa-2x
+      li(class="{{isProfileSectionSelected 'history'}}")
+        a(href="/user/{{studentId}}/history")
+          i.fa.fa-history.fa-2x
+

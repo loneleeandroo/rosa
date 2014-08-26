@@ -2,23 +2,20 @@ template(name="header")
   nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
     .container-fluid
       .navbar-header
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
+        if currentUser
+          button.navbar-drawer-toggle.pull-left
+            span.sr-only Toggle Student Search Form
+            i.fa.fa-search.fa-lg
+        button.navbar-toggle(data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+          span.sr-only Toggle
+          i.fa.fa-user.fa-lg
         span.navbar-brand-container.text-center
-          if student
-            .navbar-brand
-              span.badge {{student.sid}} 
-              span {{student.name}}
+          if currentUser
+            if student
+              .navbar-brand
+                span.badge {{student.sid}} 
+                span {{student.name}}
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        ul.nav.navbar-nav.navbar-left
-          li.active
-            a(href="#") 
-              i.fa.fa-user
-              span Users
-
         ul.nav.navbar-nav.navbar-right
           if currentUser
             li.dropdown

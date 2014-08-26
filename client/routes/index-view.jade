@@ -1,30 +1,17 @@
 template(name="index")
   .row.row-full-height
-    aside.col-lg-2.well.full-height-background.visible-lg-table-cell
-    aside.col-lg-2.visible-lg-table-cell
-      form#search-form
-        .form-group
-          input.form-control(role="search", type="text", placeholder="Type in here to search ...")
-
-      hr
-
-      ul#student-list.media-list.nav.nav-pills.nav-stacked
-        each fcResults
-          li.media(class="{{isUserSelected _id}}")
-            a.media-body(href="/user/{{_id}}")
-              img.pull-left.media-object.media-thumbnail
-              .media-heading-container
-                .media-heading 
-                  .badge {{sid}}
-                  h4 {{name}}
-              
-    article.col-md-12.thumnbail-container.col-lg-8
+    //
+      aside.col-lg-2.well.full-height-background.visible-lg-table-cell
+      aside.col-lg-2.visible-lg-table-cell
+        +searchForm
+                
+    article.col-xs-12.thumnbail-container
       .row
         .pull-left
           button.btn.btn-success.btn-md(style="position:relative") 
             input.file-input(type="file")
             i.fa.fa-plus
-            | Upload
+            span.hidden-xs Upload
         .pull-right
           .btn-group
             button.btn.btn-default.btn-md(type='button')
@@ -45,41 +32,40 @@ template(name="index")
                   a(href='#') Newest Comment
                 li
                   a(href='#') Oldest Comment
-          button.btn.btn-primary.btn-md(type='button') Hide Notes
 
       .row
         hr
 
       .row.thumbnail-row
-        {{userId}}
         ul.slides.thumbnail-group
           each files
             li.col-xs-6.col-md-3
               a.lesson-thumbnail.thumbnail(href="#")
                 .thumbnail-inner.lesson-thumbnail-inner
                   h3.text-center.thumbnail-caption {{name}}
-           
-    aside.col-lg-2.well.full-height-background.visible-lg-table-cell
-    aside.col-lg-2.visible-lg-table-cell
-      p.lead.notes-header Notes
+    
+    //
+      aside.col-lg-2.well.full-height-background.visible-lg-table-cell
+      aside.col-lg-2.visible-lg-table-cell
+        p.lead.notes-header Notes
 
-      if notes.length
+        if notes.length
+          hr
+
+        ul.media-list
+          each notes
+            li.media
+              img.pull-left.media-object.media-thumbnail
+              .media-body(href="#")
+                strong {{authorId}}
+                p {{message}}
+
         hr
 
-      ul.media-list
-        each notes
-          li.media
-            img.pull-left.media-object.media-thumbnail
-            .media-body(href="#")
-              strong {{authorId}}
-              p {{message}}
-
-      hr
-
-      form#comment-form
-        .form-group
-          textarea.form-control(role="comment", name="message", placeholder="Type in here to comment ...")
-        .form-group
-          button.btn.btn-success.pull-right(type="submit") Comment
+        form#comment-form
+          .form-group
+            textarea.form-control(role="comment", name="message", placeholder="Type in here to comment ...")
+          .form-group
+            button.btn.btn-success.pull-right(type="submit") Comment
 
               
