@@ -1,0 +1,16 @@
+template(name="searchForm")
+  form#search-form
+    .form-group
+      input.form-control(role="search", type="text", placeholder="Type in here to search ...")
+
+  hr
+
+  ul#student-list.media-list.nav.nav-pills.nav-stacked
+    each fcResults
+      li.media(class="{{isUserSelected _id}}")
+        a.media-body(href="/user/{{_id}}")
+          img.pull-left.media-object.media-thumbnail
+          .media-heading-container
+            .media-heading 
+              .badge {{sid}}
+              h4 {{name}}
