@@ -9,3 +9,7 @@ Template[templateName].rendered = () ->
   )
   window.snapper = snapper
   return
+
+# Collection
+Template[templateName].student = ->
+  Session.get("selectedStudent")

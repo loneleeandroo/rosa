@@ -5,18 +5,31 @@ template(name="header")
         if currentUser
           button.navbar-drawer-toggle.pull-left
             span.sr-only Toggle Student Search Form
-            i.fa.fa-search.fa-lg
-        button.navbar-toggle(data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+            i.fa.fa-users.fa-lg
+        button.navbar-toggle(data-toggle="collapse", data-target="#header-nav")
           span.sr-only Toggle
-          i.fa.fa-user.fa-lg
+          i.fa.fa-bookmark.fa-lg
         span.navbar-brand-container.text-center
           if currentUser
             if student
               .navbar-brand
                 span.badge {{student.sid}} 
                 span {{student.name}}
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        ul.nav.navbar-nav.navbar-right
+      #header-nav.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right.visible-xs-block
+          li
+            a(href='/', data-toggle="collapse", data-target="#header-nav")
+              i.fa.fa-dashboard
+              span Dashboard
+          li
+            a(href='/profile', data-toggle="collapse", data-target="#header-nav")
+              i.fa.fa-user
+              span My Profile
+          li
+            a(href='/sign-out', data-toggle="collapse", data-target="#header-nav")
+              i.fa.fa-sign-out
+              span Sign Out
+        ul.nav.navbar-nav.navbar-right.hidden-xs
           if currentUser
             li.dropdown
               a.dropdown-toggle(href='#', data-toggle='dropdown')

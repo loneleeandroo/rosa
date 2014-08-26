@@ -13,6 +13,8 @@ template(name="layout")
       +yield region="header"
     section#main.container-fluid
       +yield
-    footer.visible-xs-block
-      +yield region="footer"
+    if currentUser
+      if student
+        footer.visible-xs-block
+          +yield region="footer"
 
