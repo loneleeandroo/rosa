@@ -1,0 +1,14 @@
+template(name="addNewStudent")
+  .modal.fade#addNewStudent
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal')
+            span(aria-hidden='true') ×
+            span.sr-only Close
+          h4.modal-title Create New Student
+        .modal-body
+          p One fine body…
+        .modal-footer
+          button.btn.btn-default(type='button', data-dismiss='modal') Cancel
+          button.btn.btn-success(type='button') Create
