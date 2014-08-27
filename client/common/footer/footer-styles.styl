@@ -22,11 +22,24 @@ ul.navbar-footer li
   text-align center
   height 50px
   width 1%
+  border-left 1px solid #ddd
+
+ul.navbar-footer li:first-child
+  border-left none
 
 ul.navbar-footer li a 
   padding 0
   height 100%
+  font-size 2em
 
 ul.navbar-footer li a i
   margin-top 12px
 
+@media (min-width: 768px)
+  #nav-student
+    //margin-top 50px
+    margin-bottom 20px
+    //background-color white
+
+  #nav-student ul li
+    //width 20%

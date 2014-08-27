@@ -1,40 +1,38 @@
 template(name="files")
-  .row 
-    article.thumnbail-container
-      .row
-        .pull-left
-          button.btn.btn-success.btn-md(style="position:relative") 
-            input.file-input(type="file")
-            i.fa.fa-plus
-            span.hidden-xs Upload
-        .pull-right
-          .btn-group
-            button.btn.btn-default.btn-md(type='button')
-              span Most Recent
-              button.btn.btn-default.btn-md.dropdown-toggle(type='button', data-toggle='dropdown')
-                span.caret
-                span.sr-only Toggle Dropdown                
-              ul.dropdown-menu.pull-right(role='menu')
-                li
-                  a(href='#') Most Recent
-                li
-                  a(href='#') Least Recent
-                li
-                  a(href='#') A-Z Name
-                li
-                  a(href='#') Z-A Name
-                li
-                  a(href='#') Newest Comment
-                li
-                  a(href='#') Oldest Comment
+  .row
+    .pull-left
+      button.btn.btn-success.btn-md(style="position:relative") 
+        input.file-input(type="file")
+        i.fa.fa-plus
+        span.hidden-xs Upload
+    .pull-right
+      .btn-group
+        button.btn.btn-default.btn-md(type='button')
+          span Most Recent
+          button.btn.btn-default.btn-md.dropdown-toggle(type='button', data-toggle='dropdown')
+            span.caret
+            span.sr-only Toggle Dropdown                
+          ul.dropdown-menu.pull-right(role='menu')
+            li
+              a(href='#') Most Recent
+            li
+              a(href='#') Least Recent
+            li
+              a(href='#') A-Z Name
+            li
+              a(href='#') Z-A Name
+            li
+              a(href='#') Newest Comment
+            li
+              a(href='#') Oldest Comment
 
-      .row
-        hr
+  .row
+    hr
 
-      .row.thumbnail-row
-        ul.slides.thumbnail-group
-          each files
-            li.col-xs-6.col-md-3
-              a.lesson-thumbnail.thumbnail(href="#")
-                .thumbnail-inner.lesson-thumbnail-inner
-                  h3.text-center.thumbnail-caption {{name}}
+  .row.thumbnail-row
+    ul.slides.thumbnail-group
+      each files
+        li.col-xs-6.col-md-3
+          a.lesson-thumbnail.thumbnail(href="#")
+            .thumbnail-inner.lesson-thumbnail-inner
+              //h3.text-center.thumbnail-caption {{name}}

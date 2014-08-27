@@ -28,28 +28,28 @@ body,
   min-height 100%
 
 .row aside
-  padding-top 20px
+  //padding-top 20px
   padding-bottom 20px
 
-.row-full-height
-  display table
-  height 100%
-
-.row-full-height > *[class*='col-']
-  display table-cell
-  float none
-  vertical-align top
-
-.row-full-height > aside.full-height-background
-  position absolute
-  height 100%
-  top 0
-  margin-bottom -50px
-
-@media (min-width: 1200px)
+@media (min-width: 992px)
   .visible-lg-table-cell
     display table-cell !important
 
-@media (max-width: 1199px)
+  .row-full-height
+    display table
+    height 100%
+
+  .row-full-height > *[class*='col-']
+    display table-cell
+    float none
+    vertical-align top
+
+  .row-full-height > aside.full-height-background
+    position absolute
+    height 100%
+    top 0
+    margin-bottom -50px
+
+@media (max-width: 991px)
   .visible-lg-table-cell
     display none !important

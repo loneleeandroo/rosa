@@ -14,3 +14,14 @@ template(name="searchForm")
             .media-heading 
               .badge {{sid}}
               h4 {{name}}
+
+  #search-form-nav.nav.navbar-default.navbar-fixed-bottom.col-md-3
+    .container-fluid
+      .row
+        ul.nav.navbar-nav
+          li
+            a(href="#", data-toggle="modal", data-target="#addNewStudent") 
+              i.fa.fa-plus
+          li
+            a(href="#", data-toggle="modal", data-target="#addNewStudent") 
+              i.fa.fa-minus

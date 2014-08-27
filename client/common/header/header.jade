@@ -3,7 +3,7 @@ template(name="header")
     .container-fluid
       .navbar-header
         if currentUser
-          button.navbar-drawer-toggle.pull-left
+          button.navbar-drawer-toggle.pull-left.hidden-md.hidden-lg
             span.sr-only Toggle Student Search Form
             i.fa.fa-users.fa-lg
         button.navbar-toggle(data-toggle="collapse", data-target="#header-nav")

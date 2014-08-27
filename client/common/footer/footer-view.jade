@@ -1,16 +1,41 @@
 template(name="footer")
-  nav.navbar.navbar-default
+  .nav.navbar.navbar-default.visible-xs-block
     ul.nav.navbar-nav.navbar-footer
       li(class="{{isProfileSectionSelected 'profile'}}")
         a(href="/user/{{studentId}}")
-          i.fa.fa-user.fa-2x
+          i.fa.fa-user
+          span.hidden-xs Profile
       li(class="{{isProfileSectionSelected 'files'}}")
         a(href="/user/{{studentId}}/files")
-          i.fa.fa-inbox.fa-2x
-      li(class="{{isProfileSectionSelected 'academics'}}")
-        a(href="/user/{{studentId}}/academics")
-          i.fa.fa-graduation-cap.fa-2x
+          i.fa.fa-inbox
+          span.hidden-xs Files
+      //
+        li(class="{{isProfileSectionSelected 'academics'}}")
+          a(href="/user/{{studentId}}/academics")
+            i.fa.fa-graduation-cap
+            span.hidden-xs Academics
       li(class="{{isProfileSectionSelected 'history'}}")
         a(href="/user/{{studentId}}/history")
-          i.fa.fa-history.fa-2x
+          i.fa.fa-history
+          span.hidden-xs History
+
+  #nav-student.hidden-xs
+    ul.nav.nav-tabs.nav-justified
+      li(class="{{isProfileSectionSelected 'profile'}}")
+        a(href="/user/{{studentId}}")
+          i.fa.fa-user
+          span.hidden-xs Profile
+      li(class="{{isProfileSectionSelected 'files'}}")
+        a(href="/user/{{studentId}}/files")
+          i.fa.fa-inbox
+          span.hidden-xs Files
+      //
+        li(class="{{isProfileSectionSelected 'academics'}}")
+          a(href="/user/{{studentId}}/academics")
+            i.fa.fa-graduation-cap
+            span.hidden-xs Academics
+      li(class="{{isProfileSectionSelected 'history'}}")
+        a(href="/user/{{studentId}}/history")
+          i.fa.fa-history
+          span.hidden-xs History
 

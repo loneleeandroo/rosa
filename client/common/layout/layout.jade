@@ -10,11 +10,24 @@ template(name="layout")
       h1 Right
   #content.snap-content
     header
-      +yield region="header"
+      +header
     section#main.container-fluid
-      +yield
+      .row.row-full-height
+        aside.col-md-3.well.full-height-background.hidden-xs.hidden-sm
+        aside.col-md-3.hidden-xs.hidden-sm
+          +searchForm
+         
+        article.col-md-9.col-sm-12.thumnbail-container
+          if currentUser
+            if student
+              .row.hidden-xs
+                +footer
+          +yield
     if currentUser
       if student
         footer.visible-xs-block
-          +yield region="footer"
+          +footer
+  #modals
+    +addNewStudent
+
 
