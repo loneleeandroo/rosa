@@ -8,7 +8,19 @@ template(name="addNewStudent")
             span.sr-only Close
           h4.modal-title Create New Student
         .modal-body
-          p One fine body…
+          form#add-new-student.form-horizontal
+            .form-group
+              label.col-sm-2.control-label SID
+              .col-sm-10
+                input.form-control(name="sid")
+            .form-group
+              label.col-sm-2.control-label First Name
+              .col-sm-10
+                input.form-control(name="firstname")
+            .form-group
+              label.col-sm-2.control-label Last Name
+              .col-sm-10
+                input.form-control(name="lastname")
         .modal-footer
           button.btn.btn-default(type='button', data-dismiss='modal') Cancel
-          button.btn.btn-success(type='button') Create
+          button.btn.btn-success(type='submit') Create

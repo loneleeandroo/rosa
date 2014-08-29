@@ -21,6 +21,15 @@ Template[templateName].rendered = () ->
   mediaQuery = window.matchMedia("(min-width: 992px)")
   mediaQuery.addListener toggleSnapper
   toggleSnapper(mediaQuery) 
+
+  document.body.addEventListener 'touchmove', (e) ->
+    #This prevents native scrolling from happening.
+    e.preventDefault()
+    return
+  , false
+
+  mainScroller = new IScroll( $('#main')[0] )
+
   return
 
 # Collection

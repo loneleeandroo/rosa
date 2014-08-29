@@ -1,27 +1,31 @@
 template(name="searchForm")
-  form#search-form
-    .form-group
-      input.form-control(role="search", type="text", placeholder="Type in here to search ...")
+  #search-form-container
+    #search-form-header
+      form#search-form
+        .form-group
+          input.form-control(role="search", type="text", placeholder="Type in here to search ...")
 
-  hr
+      hr
 
-  ul#student-list.media-list.nav.nav-pills.nav-stacked
-    each fcResults
-      li.media(class="{{isUserSelected _id}}")
-        a.media-body(href="/user/{{_id}}")
-          img.pull-left.media-object.media-thumbnail
-          .media-heading-container
-            .media-heading 
-              .badge {{sid}}
-              h4 {{name}}
+    #search-form-content 
+      ul#student-list.media-list.nav.nav-pills.nav-stacked
+        each fcResults
+          li.media(class="{{isUserSelected _id}}")
+            a.media-body(href="/user/{{_id}}")
+              img.pull-left.media-object.media-thumbnail
+              .media-heading-container
+                .media-heading 
+                  .badge {{sid}}
+                  h4 {{firstname}} {{lastname}}
 
-  #search-form-nav.nav.navbar-default.navbar-fixed-bottom.col-md-3
-    .container-fluid
-      .row
-        ul.nav.navbar-nav
-          li
-            a(href="#", data-toggle="modal", data-target="#addNewStudent") 
-              i.fa.fa-plus
-          li
-            a(href="#", data-toggle="modal", data-target="#addNewStudent") 
-              i.fa.fa-minus
+    #search-form-footer
+      #search-form-nav.nav.navbar-default.navbar-fixed-bottom.col-md-3
+        .container-fluid
+          .row
+            ul.nav.navbar-nav
+              li
+                a(href="#", data-toggle="modal", data-target="#addNewStudent") 
+                  i.fa.fa-plus
+              li
+                a(href="#", data-toggle="modal", data-target="#addNewStudent") 
+                  i.fa.fa-minus

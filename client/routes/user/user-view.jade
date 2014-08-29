@@ -1,1 +1,12 @@
 template(name="user")
+  .media.row(style="margin-top: 0;")
+    .col-sm-3
+      img.media-object(style="width: 100%; height: 200px; margin-bottom: 30px;margin-top: 0;")
+    .media-body.col-sm-9
+      dl.dl-horizontal
+        dt SID
+        dd {{student.sid}}
+        dt First Name
+        dd {{student.firstname}}
+        dt Last Name
+        dd {{student.lastname}}

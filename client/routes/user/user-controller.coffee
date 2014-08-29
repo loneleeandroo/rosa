@@ -32,3 +32,7 @@ _.each subpages, (subpage) ->
         Session.set 'profileSection', subpage
         return
     return
+
+# Collections
+Template[templateName].student = ->
+  return Session.get 'selectedStudent'

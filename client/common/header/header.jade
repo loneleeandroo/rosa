@@ -14,7 +14,7 @@ template(name="header")
             if student
               .navbar-brand
                 span.badge {{student.sid}} 
-                span {{student.name}}
+                span {{student.firstname}} {{student.lastname}}
       #header-nav.collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.visible-xs-block
           li

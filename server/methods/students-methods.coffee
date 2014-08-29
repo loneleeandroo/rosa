@@ -3,5 +3,6 @@ Meteor.methods
     Students.findOne studentId,
       fields:
         _id: 1
-        name: 1
+        firstname: 1
+        lastname: 1
         sid: 1

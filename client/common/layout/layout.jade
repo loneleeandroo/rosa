@@ -8,9 +8,11 @@ template(name="layout")
       +searchForm
     .snap-drawer.snap-drawer-right
       h1 Right
+
   #content.snap-content
     header
       +header
+
     section#main.container-fluid
       .row.row-full-height
         aside.col-md-3.well.full-height-background.hidden-xs.hidden-sm
@@ -23,10 +25,14 @@ template(name="layout")
               .row.hidden-xs
                 +footer
           +yield
+
     if currentUser
       if student
         footer.visible-xs-block
           +footer
+    //
+      
+
   #modals
     +addNewStudent
 

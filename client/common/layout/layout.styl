@@ -1,37 +1,57 @@
+html,
+body,
+#content
+  min-height 100%
+
 html
   position relative
 
-#content
-  padding-bottom 50px
-  background-color white
-
 #drawers
-  //background-color #323949
   background-color #f5f5f5
   color white
 
-#drawers .snap-drawer
-  padding: 15px 20px
+#content
+  background-color white
+  height 100%
+
+header,
+footer
+  height 50px
+  width 100% 
+  position absolute
+  background-color #ddd
+
+header 
+  top 0
+
+footer
+  bottom 0
 
 #main
-  padding-top 70px
+  width 100% 
+  position absolute 
+  top 50px 
+  bottom 50px
+  height auto
+  overflow hidden
+
+#main > .row > article
+  padding-top 20px
 
 #main .row aside
   border-radius 0
   border-top none
   border-bottom none
-  
-html,
-body,
-#content,
-#main,
-  min-height 100%
 
 .row aside
-  //padding-top 20px
-  padding-bottom 20px
+  padding 0
 
 @media (min-width: 992px)
+  #main
+    min-height 100%
+    top 0
+    padding-top 50px
+
   .visible-lg-table-cell
     display table-cell !important
 

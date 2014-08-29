@@ -1,26 +1,55 @@
-#search-form-nav
+#search-form-container #search-form-nav
   border-right 1px solid #ddd
   border-top 1px solid #ddd
   height 50px
 
-#search-form-nav li
+#search-form-container #search-form-nav li
   border-right 1px solid #ddd
 
+#search-form-container ul#student-list
+  margin-bottom 50px
+
+#search-form-container #search-form-header,
+#search-form-container #search-form-footer
+  width 100% 
+  position absolute
+
+#search-form-container #search-form-header 
+  top 0
+  padding-top 20px
+  padding-left 15px
+  padding-right 15px
+  height 70px
+
+#search-form-container #search-form-footer
+  bottom 0
+  height 50px
+
+#search-form-container #search-form-content
+  width 100% 
+  position absolute 
+  top 90px 
+  bottom 50px
+  overflow hidden
+
+#search-form-container ul#student-list li a
+  border-radius 0
+
 @media (max-width: 767px)
-  #search-form-nav .container-fluid .row
+  #search-form-container #search-form-nav .container-fluid .row
     margin-left 0
     margin-right 0
 
-  #search-form-nav .navbar-nav
+  #search-form-container #search-form-nav .navbar-nav
     margin 0 -15px
 
-  #search-form-nav li a
+  #search-form-container #search-form-nav li a
     height 50px
     padding 15px
     margin-left -4px
 
-  #search-form-nav li:first-child a
+  #search-form-container #search-form-nav li:first-child a
     margin-left 0
 
-  #search-form-nav li
+  #search-form-container #search-form-nav li
     display inline-block
